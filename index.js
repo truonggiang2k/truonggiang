@@ -12,7 +12,7 @@ const bookRoute = require("./routes/book");
 dotenv.config();
 //CONNECT DATABASE
 mongoose.connect(process.env.MONGODB_URL, () => {
-  console.log("Connected to MongoDB");
+  console.log("Connected to MongoDB successfully");
 });
 
 app.use(bodyParser.json({ limit: "50mb" }));
@@ -25,5 +25,5 @@ app.use("/v1/author", authorRoute);
 app.use("/v1/book", bookRoute);
 
 app.listen(process.env.PORT || 8000, () => {
-  console.log("Server is running...");
+  console.log("Wait a moment, the server is running...");
 });
